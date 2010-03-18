@@ -23,14 +23,15 @@
  OTHER DEALINGS IN THE SOFTWARE.
 */
 
+using System.Runtime.InteropServices;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DotNetOpenCL
 {
     public class CL
     {
+        [DllImport("OpenCL.dll")]
+        public static extern int clGetPlatformIDs(uint num_entries, IntPtr platforms, out uint num_platforms);
+
     }
 }
