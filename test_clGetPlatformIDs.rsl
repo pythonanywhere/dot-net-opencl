@@ -30,9 +30,10 @@ from System import Array, IntPtr
     </names>
     <viewStates>
         <viewState worksheet="Sheet1">
-            <currentCell col="2" row="12" />
+            <currentCell col="1" row="0" />
+            <selection left="1" top="1" right="1" bottom="0" />
             <scrollPos col="1" row="1" />
-            <virtualGridSize width="25" height="35" />
+            <virtualGridSize width="24" height="35" />
         </viewState>
         <viewState worksheet="Sheet2">
             <currentCell col="1" row="1" />
@@ -60,7 +61,7 @@ from System import Array, IntPtr
         <trait name="Unit">
         </trait>
         <trait name="ColWidth">
-            <traitentry col="1" row="0" value="320" />
+            <traitentry col="1" row="0" value="379" />
             <traitentry col="2" row="0" value="373" />
         </trait>
         <trait name="Alignment">
@@ -102,6 +103,7 @@ from System import Array, IntPtr
         <trait name="BackColor">
         </trait>
         <trait name="Bold">
+            <traitentry col="1" row="0" value="True" />
         </trait>
         <trait name="Strikethrough">
         </trait>
@@ -121,6 +123,10 @@ from System import Array, IntPtr
         </cell>
         <cell name="B1" value="=CL.clGetPlatformIDs(0, None)" type="general">
         </cell>
+        <cell name="A11" value="Platform array as list:" type="general">
+        </cell>
+        <cell name="B11" value="=[platform for platform in B10]" type="general">
+        </cell>
         <cell name="A6" value="Call to clGetPlatformIDs to get platform array:" type="general">
         </cell>
         <cell name="B6" value="=CL.clGetPlatformIDs(numPlatforms, platforms)" type="general">
@@ -129,13 +135,17 @@ from System import Array, IntPtr
         </cell>
         <cell name="B5" value="=Array.CreateInstance(IntPtr, numPlatforms)" type="general">
         </cell>
+        <cell name="A10" value="Platform array with dependency on call to get it:" type="general">
+        </cell>
+        <cell name="B10" value="=IF(B7==0, B5, None)" type="general">
+        </cell>
         <cell name="A3" value="Number of platforms:" type="general">
         </cell>
         <cell name="B3" value="=B1[1]" type="general">
         </cell>
         <cell name="A7" value="Error code:" type="general">
         </cell>
-        <cell name="A8" value="Platform array:" type="general">
+        <cell name="A8" value="Number of platforms returned:" type="general">
         </cell>
     </worksheet>
     <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
