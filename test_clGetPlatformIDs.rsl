@@ -1,0 +1,260 @@
+<!--
+This spreadsheet is copyright 2010, all rights reserved.
+-->
+<document currentResultWorksheet="Sheet1" verticalSplitterRatio="0.75" horizontalSplitterRatio="0.539663461538" splitterOrientation="Horizontal" suspendRecalculations="False" license="Closed source/proprietary" copyrightOwner="" resolverVersion="1.8.1" resolverBuild="5061" documentVersion="12">
+    <foldState license="True" imports="True" worksheetCreation="True" preConstantsUserCode="False" constants="True" preFormulaeUserCode="False" generated="False" postFormulaeUserCode="False"/>
+    <traitDefaults>
+        <traitDefault name='ColWidth' value='82' />
+        <traitDefault name='FontSize' value='10.0' />
+        <traitDefault name='RowHeight' value='22' />
+    </traitDefaults>
+    <preConstantsUserCode><![CDATA[
+from os.path import abspath, dirname, join
+dllPath = join(dirname(abspath(__file__)), "DotNetOpenCL", "DotNetOpenCL", "bin", "Release")
+
+import sys
+sys.path.append(dllPath)
+
+import clr
+clr.AddReference("DotNetOpenCL")
+
+from DotNetOpenCL import CL
+from System import Array, IntPtr
+
+]]></preConstantsUserCode>
+    <preFormulaeUserCode><![CDATA[
+]]></preFormulaeUserCode>
+    <names>
+        <name name="numPlatforms" value="Sheet1!$B$3" />
+        <name name="platforms" value="Sheet1!$B$5" />
+    </names>
+    <viewStates>
+        <viewState worksheet="Sheet1">
+            <currentCell col="2" row="12" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="25" height="35" />
+        </viewState>
+        <viewState worksheet="Sheet2">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="100" height="100" />
+        </viewState>
+        <viewState worksheet="Sheet3">
+            <currentCell col="1" row="1" />
+            <scrollPos col="1" row="1" />
+            <virtualGridSize width="100" height="100" />
+        </viewState>
+    </viewStates>
+    <worksheetOrder>
+        <orderentry name="Sheet1" />
+        <orderentry name="Sheet2" />
+        <orderentry name="Sheet3" />
+    </worksheetOrder>
+    <worksheet name="Sheet1" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <trait name="FontSize">
+        </trait>
+        <trait name="BorderBottom">
+        </trait>
+        <trait name="ShowNegativeSymbol">
+        </trait>
+        <trait name="Unit">
+        </trait>
+        <trait name="ColWidth">
+            <traitentry col="1" row="0" value="320" />
+            <traitentry col="2" row="0" value="373" />
+        </trait>
+        <trait name="Alignment">
+        </trait>
+        <trait name="BorderTop">
+        </trait>
+        <trait name="WebEditable">
+        </trait>
+        <trait name="Italic">
+        </trait>
+        <trait name="FontFamily">
+        </trait>
+        <trait name="ShowSeparators">
+        </trait>
+        <trait name="VerticalAlignment">
+        </trait>
+        <trait name="Formatter">
+        </trait>
+        <trait name="Underline">
+        </trait>
+        <trait name="Color">
+        </trait>
+        <trait name="RowHidden">
+        </trait>
+        <trait name="BorderLeft">
+        </trait>
+        <trait name="StripZeros">
+        </trait>
+        <trait name="ColHidden">
+        </trait>
+        <trait name="Wrap">
+        </trait>
+        <trait name="NegativeTextColor">
+        </trait>
+        <trait name="BorderRight">
+        </trait>
+        <trait name="RowHeight">
+        </trait>
+        <trait name="BackColor">
+        </trait>
+        <trait name="Bold">
+        </trait>
+        <trait name="Strikethrough">
+        </trait>
+        <trait name="ImagePlacement">
+        </trait>
+        <trait name="DecimalPlaces">
+        </trait>
+        <cell name="B7" value="=B6[0]" type="general">
+        </cell>
+        <cell name="B8" value="=B6[1]" type="general">
+        </cell>
+        <cell name="A2" value="Error code:" type="general">
+        </cell>
+        <cell name="B2" value="=B1[0]" type="general">
+        </cell>
+        <cell name="A1" value="Call to clGetPlatformIDs to get number of platforms:" type="general">
+        </cell>
+        <cell name="B1" value="=CL.clGetPlatformIDs(0, None)" type="general">
+        </cell>
+        <cell name="A6" value="Call to clGetPlatformIDs to get platform array:" type="general">
+        </cell>
+        <cell name="B6" value="=CL.clGetPlatformIDs(numPlatforms, platforms)" type="general">
+        </cell>
+        <cell name="A5" value="Creation of platform array:" type="general">
+        </cell>
+        <cell name="B5" value="=Array.CreateInstance(IntPtr, numPlatforms)" type="general">
+        </cell>
+        <cell name="A3" value="Number of platforms:" type="general">
+        </cell>
+        <cell name="B3" value="=B1[1]" type="general">
+        </cell>
+        <cell name="A7" value="Error code:" type="general">
+        </cell>
+        <cell name="A8" value="Platform array:" type="general">
+        </cell>
+    </worksheet>
+    <worksheet name="Sheet2" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <trait name="FontSize">
+        </trait>
+        <trait name="BorderBottom">
+        </trait>
+        <trait name="ShowNegativeSymbol">
+        </trait>
+        <trait name="Unit">
+        </trait>
+        <trait name="ColWidth">
+        </trait>
+        <trait name="Alignment">
+        </trait>
+        <trait name="BorderTop">
+        </trait>
+        <trait name="WebEditable">
+        </trait>
+        <trait name="Italic">
+        </trait>
+        <trait name="FontFamily">
+        </trait>
+        <trait name="ShowSeparators">
+        </trait>
+        <trait name="VerticalAlignment">
+        </trait>
+        <trait name="Formatter">
+        </trait>
+        <trait name="Underline">
+        </trait>
+        <trait name="Color">
+        </trait>
+        <trait name="RowHidden">
+        </trait>
+        <trait name="BorderLeft">
+        </trait>
+        <trait name="StripZeros">
+        </trait>
+        <trait name="ColHidden">
+        </trait>
+        <trait name="Wrap">
+        </trait>
+        <trait name="NegativeTextColor">
+        </trait>
+        <trait name="BorderRight">
+        </trait>
+        <trait name="RowHeight">
+        </trait>
+        <trait name="BackColor">
+        </trait>
+        <trait name="Bold">
+        </trait>
+        <trait name="Strikethrough">
+        </trait>
+        <trait name="ImagePlacement">
+        </trait>
+        <trait name="DecimalPlaces">
+        </trait>
+    </worksheet>
+    <worksheet name="Sheet3" value="" showGrid="True" showBounds="False" headerWidth="-1" headerHeight="-1">
+        <trait name="FontSize">
+        </trait>
+        <trait name="BorderBottom">
+        </trait>
+        <trait name="ShowNegativeSymbol">
+        </trait>
+        <trait name="Unit">
+        </trait>
+        <trait name="ColWidth">
+        </trait>
+        <trait name="Alignment">
+        </trait>
+        <trait name="BorderTop">
+        </trait>
+        <trait name="WebEditable">
+        </trait>
+        <trait name="Italic">
+        </trait>
+        <trait name="FontFamily">
+        </trait>
+        <trait name="ShowSeparators">
+        </trait>
+        <trait name="VerticalAlignment">
+        </trait>
+        <trait name="Formatter">
+        </trait>
+        <trait name="Underline">
+        </trait>
+        <trait name="Color">
+        </trait>
+        <trait name="RowHidden">
+        </trait>
+        <trait name="BorderLeft">
+        </trait>
+        <trait name="StripZeros">
+        </trait>
+        <trait name="ColHidden">
+        </trait>
+        <trait name="Wrap">
+        </trait>
+        <trait name="NegativeTextColor">
+        </trait>
+        <trait name="BorderRight">
+        </trait>
+        <trait name="RowHeight">
+        </trait>
+        <trait name="BackColor">
+        </trait>
+        <trait name="Bold">
+        </trait>
+        <trait name="Strikethrough">
+        </trait>
+        <trait name="ImagePlacement">
+        </trait>
+        <trait name="DecimalPlaces">
+        </trait>
+    </worksheet>
+    <postFormulaeUserCode><![CDATA[
+
+]]></postFormulaeUserCode>
+</document>
