@@ -31,7 +31,10 @@ namespace DotNetOpenCL
     public class CL
     {
         [DllImport("OpenCL.dll")]
-        public static extern int clGetPlatformIDs(uint num_entries, IntPtr platforms, out uint num_platforms);
+        public static extern int clGetPlatformIDs(            
+            uint num_entries,
+            [MarshalAs(UnmanagedType.LPArray)] IntPtr[] platforms, 
+            out uint num_platforms);
 
     }
 }
